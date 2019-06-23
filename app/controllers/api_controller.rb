@@ -12,7 +12,8 @@ class ApiController < ApplicationController
       client_id: ENV['AMADEUS_CLIENT_ID'],
       client_secret: ENV['AMADEUS_CLIENT_SECRET']
       )
-    response = amadeus.reference_data.locations.airports.get(latitude: lat, longitude: lng)
+    # response = amadeus.reference_data.locations.airports.get(latitude: lat, longitude: lng)
+    response = amadeus.shopping.flight_dates.get(origin: 'MAD', destination: 'MUC')
     # city_code = response.data.first['iataCode']
     # response = amadeus.shopping.hotel_offers.get(cityCode: city_code)
     # response = amadeus.reference_data.locations.points_of_interest.get(latitude: lat, longitude: lng)
